@@ -87,7 +87,7 @@ _G.packer_plugins = {
   gruvbox = {
     loaded = true,
     path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -104,10 +104,20 @@ _G.packer_plugins = {
     path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  monokai = {
+    loaded = true,
+    path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/monokai",
+    url = "https://github.com/loctvl842/monokai-pro.nvim"
+  },
   ["neo-tree.nvim"] = {
     loaded = true,
     path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  neovim = {
+    loaded = true,
+    path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["nui.nvim"] = {
     loaded = true,
@@ -129,10 +139,10 @@ _G.packer_plugins = {
     path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  ["onedark.nvim"] = {
+  onedark = {
     loaded = true,
-    path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/monsonjeremy/onedark.nvim"
+    path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/onedark",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -153,6 +163,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/tokyo",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  tokyonight = {
+    loaded = true,
+    path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/tokyonight",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  vscode = {
+    loaded = true,
+    path = "/Users/timenos/.local/share/nvim/site/pack/packer/start/vscode",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 

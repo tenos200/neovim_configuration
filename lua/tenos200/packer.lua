@@ -8,16 +8,16 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.2',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', 
     requires = { {'nvim-lua/plenary.nvim'} }
     }
-  use {
+    use {
   "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x", requires = { 
+    branch = "v3.x",
+    requires = { 
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     }
   }
   use {
@@ -40,10 +40,8 @@ return require('packer').startup(function(use)
     use { "ellisonleao/gruvbox.nvim", as="gruvbox"}
     use {'navarasu/onedark.nvim', as="onedark"}
     use { "rose-pine/neovim", name = "rose-pine" }
-    use {'Mofiqul/vscode.nvim', as="vscode"}
     use {"folke/tokyonight.nvim", as="tokyonight"}
-    use {"loctvl842/monokai-pro.nvim", as="monokai-pro"}
-    use {'navarasu/onedark.nvim', as="onedark"}
-
+    use {'Mofiqul/vscode.nvim', as="vscode"}
+    use {"loctvl842/monokai-pro.nvim", as="monokai"}
 end)
 
