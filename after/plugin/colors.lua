@@ -71,7 +71,10 @@ require("tokyonight").setup({
 })
 vim.cmd("colorscheme tokyonight")
 -- Lua
-vim.cmd("colorscheme gruvbox")]]
+vim.cmd("colorscheme gruvbox")
+
+
+]]
 
 require("monokai-pro").setup({
   transparent_background = true,
@@ -127,5 +130,4 @@ require("monokai-pro").setup({
       }
     end
 })
-
 vim.cmd("colorscheme monokai-pro")
