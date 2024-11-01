@@ -43,5 +43,6 @@ return require('packer').startup(function(use)
     use {"folke/tokyonight.nvim", as="tokyonight"}
     use {'Mofiqul/vscode.nvim', as="vscode"}
     use {"loctvl842/monokai-pro.nvim", as="monokai"}
+    use { "catppuccin/nvim", as = "catppuccin" }
 end)
 
