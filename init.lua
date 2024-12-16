@@ -26,7 +26,10 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
     require 'plugins.telescope',
-    require 'plugins.catppuccin',
+    require 'plugins.monokai',
+    -- require 'plugins.dracula',
+    -- require 'plugins.catppuccin',
+    -- require 'plugins.rosepine',
     require 'plugins.neotree',
     require 'plugins.mason',
     require 'plugins.lsp',

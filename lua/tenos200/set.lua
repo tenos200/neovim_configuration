@@ -8,7 +8,7 @@ vim.wo.number = true
 vim.g.mapleader = " "
 
 -- Disable the GUI cursor
-vim.opt.guicursor = ""
+vim.opt.guicursor = "n-v-c:block"
 
 -- Set the width of a tab character to 4 spaces
 vim.opt.tabstop = 4
@@ -45,3 +45,32 @@ vim.opt.scrolloff = 8
 
 -- Set the clipboard to use the unnamed register for copy/paste
 vim.api.nvim_set_option("clipboard", "unnamed")
+
+
+-- File-Type Specific Settings
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "cpp", "c" },
+  callback = function()
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.expandtab = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "lua" },
+  callback = function()
+    vim.bo.tabstop = 2
+    vim.bo.shiftwidth = 2
+    vim.bo.expandtab = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "python" },
+  callback = function()
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.expandtab = true
+  end,
+})
