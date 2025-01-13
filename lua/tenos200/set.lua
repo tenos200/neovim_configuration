@@ -51,8 +51,8 @@ vim.api.nvim_set_option("clipboard", "unnamed")
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "cpp", "c" },
   callback = function()
-    vim.bo.tabstop = 4
-    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 2
+    vim.bo.shiftwidth = 2
     vim.bo.expandtab = true
   end,
 })
