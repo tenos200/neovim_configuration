@@ -29,7 +29,7 @@ return {
     end)
     require('mason').setup({})
     require('mason-lspconfig').setup({
-      ensure_installed = {},
+      ensure_installed = { "gopls" },
       handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -38,7 +38,6 @@ return {
         end,
       }
     })
-
     local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
