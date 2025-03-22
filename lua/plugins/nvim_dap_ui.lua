@@ -59,5 +59,28 @@ return {
       command = '/opt/homebrew/opt/llvm/bin/lldb-dap',
       name = 'lldb'
     }
+
+    dap.configurations.go = {
+      {
+        name = "Remote debug",
+        type = "delve",
+        request = "launch",
+        program = "${workspaceFolder}",
+        args = {},
+        mode = "debug",
+        host = "127.0.0.1",
+        port = 2345
+      }
+    }
+
+    -- DAP adapter configuration
+    dap.adapters.delve = {
+      type = "server",
+      port = "${port}",
+      executable = {
+        command = "/opt/homebrew/bin/dlv",
+        args = { "dap", "-l", "127.0.0.1:${port}" },
+      }
+    }
   end
 }
