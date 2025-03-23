@@ -14,7 +14,8 @@ return {
   },
   config = function()
     local lsp_zero = require('lsp-zero')
-    lsp_zero.on_attach(function(client, bufnr)
+    lsp_zero.extend_lspconfig()
+    lsp_zero.on_attach(function(client bufnr)
       local opts = { buffer = bufnr, remap = false }
       vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
       vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -27,20 +28,30 @@ return {
       vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
       vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     end)
+
+    -- Setup Mason first
     require('mason').setup({})
     require('mason-lspconfig').setup({
       ensure_installed = { "gopls" },
       handlers = {
         lsp_zero.default_setup,
-        lua_ls = function()
-          local lua_opts = lsp_zero.nvim_lua_ls()
-          require('lspconfig').lua_ls.setup(lua_opts)
-        end,
       }
     })
+
+    -- Configure servers separately after mason-lspconfig setup
+    local lspconfig = require('lspconfig')
+
+    -- Configure lua_ls
+    lspconfig.lua_ls.setup(lsp_zero.nvim_lua_ls())
+
+    -- Configure ast-grep with Go excluded
+    lspconfig.ast_grep.setup({
+      filetypes = { 'c', 'cpp', 'rust', 'java', 'python', 'javascript',
+        'typescript', 'html', 'css', 'kotlin', 'dart', 'lua' }
+    })
+
     local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
     cmp.setup({
       sources = {
         { name = 'path' },
@@ -57,6 +68,7 @@ return {
         ['<C-Space>'] = cmp.mapping.complete(),
       }),
     })
+
     vim.api.nvim_create_autocmd('LspAttach', {
       callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
